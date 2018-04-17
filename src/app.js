@@ -1,8 +1,8 @@
 const fs = require("fs");
-const Person = require("./lib/Person.js");
 const express = require('express');
 const app = express();
 const path = require("path");
+var  db = require("./lib/db")
 var arguments = process.argv.splice(2);
 const DEBUG = true; // 是否调试模式
 
@@ -19,7 +19,10 @@ else
 	global.config = JSON.parse(fs.readFileSync("./config.json").toString());
 }
 
-app.use('/',require("./router/Home.js"));
+// 初始化数据库对象
+db(config.db);
+
+app.use('/',require("./router/Home.js").middle,require("./router/Home.js").router);
 
 app.listen(config.port);
 console.log(`app is running and listen port ${config.port}`);

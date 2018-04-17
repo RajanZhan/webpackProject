@@ -45,7 +45,8 @@ function  dirList(filePath,options){
 }
 
 
-function delDir(p){
+// 递归删除目录
+function delDirs(p){
     var arr=fs.readdirSync(p);
     for(var i in arr){
         //读取文件信息，以便于判断是否是一个文件或目录
@@ -55,14 +56,29 @@ function delDir(p){
             fs.unlinkSync(p+'/'+arr[i]);
         }else{
             //判断为假就是文件夹，就调用自己，递归的入口
-            delDir(p+'/'+arr[i]);
+            delDirs(p+'/'+arr[i]);
         }
     }
     //删除空目录
     fs.rmdirSync(p);
 }
 
+// 递归创建目录
+function mkDirs(dirname) {
+    //console.log(dirname);  
+    if (fs.existsSync(dirname)) {
+        return true;
+    } else {
+        if (mkDirs(path.dirname(dirname))) {
+            fs.mkdirSync(dirname);
+            return true;
+        }
+    }
+}
+
+
 module.exports = {
     dirList:dirList,
-    delDir:delDir
+    delDirs:delDirs,
+    mkDirs:mkDirs
 }

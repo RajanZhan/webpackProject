@@ -11,12 +11,15 @@ fs.readdirSync('node_modules')
 	nodeModules[mod] = 'commonjs ' + mod;
 });
 
+nodeModules["sequelize"] = "commonjs sequelize";
+
+
 module.exports = {
     entry: [
         './src/app.js'
     ],
     output: {
-        path: path.resolve(__dirname, 'build'),
+        path: path.resolve(__dirname, 'src'),
         filename: 'build.js'
     },
 	target: 'node',
