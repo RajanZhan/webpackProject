@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "node-watch": "^0.5.8",
     "supervisor": "^0.12.0",
     "webpack": "^4.5.0"
   },
@@ -19,7 +20,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack --watch"
+    "dev": "webpack --watch && node dev.js"
   },
   "author": "",
   "license": "ISC"

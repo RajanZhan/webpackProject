@@ -16,7 +16,7 @@ if(!DEBUG){
 }
 else
 {
-	global.config = JSON.parse(fs.readFileSync("./config.js").toString());
+	global.config = JSON.parse(fs.readFileSync("./config.json").toString());
 }
 
 app.use('/',require("./router/Home.js"));

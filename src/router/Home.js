@@ -4,7 +4,7 @@ router.get("/",(req,res)=>{
 	
 	let person = new Person();
 	console.log(person.getAge());
-	res.send("hello world 3 " + config.version + DEBUG);
+	res.send("hello world 3 " + config.msg + DEBUG);
 	
 })
 module.exports = router;
