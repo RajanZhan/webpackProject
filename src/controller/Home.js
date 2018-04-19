@@ -3,7 +3,7 @@ var db = require("../lib/db")();
 var cache = require("../lib/cache")();
 
 function middle(req,res,next){
-    console.log("home 拦截v11212");
+    console.log("home 拦截1111");
     next();
 }
 
@@ -11,7 +11,9 @@ router.get("/",async (req,res)=>{
 
     //let result = await db.models.pet.findAll();
     let result = await cache.get("name");
-	res.send(result);
+	console.log("hhah");
+	//res.render("index.html");
+	//res.send("hahaha");
 })
 
 router.get("/add",async (req,res)=>{

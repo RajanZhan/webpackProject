@@ -13,6 +13,10 @@ fs.readdirSync('node_modules')
 
 nodeModules["sequelize"] = "commonjs sequelize";
 nodeModules["redis"] = "commonjs redis";
+nodeModules["webpack"] = "commonjs webpack";
+nodeModules["html-webpack-plugin"] = "commonjs html-webpack-plugin";
+nodeModules["webpack-hot-middleware"] = "commonjs webpack-hot-middleware";
+nodeModules["webpack-dev-middleware"] = "commonjs webpack-dev-middleware";
 
 
 module.exports = {
