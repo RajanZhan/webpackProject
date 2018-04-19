@@ -2,9 +2,10 @@ const Sequelize = require("sequelize");
 var instance = null;
 const fs = require("fs");
 const path = require("path");
-module.exports = function (dbconfig) {
+module.exports = function () {
     try {
         if(instance)  return instance;
+        var dbconfig = $config.db;
         if((!dbconfig) || (!dbconfig.db) || (!dbconfig.uname) ) throw "数据库尚未初始化";
         instance = new Sequelize(dbconfig.db, dbconfig.uname, dbconfig.pwd,{
             timestamps:false,

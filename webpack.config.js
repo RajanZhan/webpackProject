@@ -12,6 +12,7 @@ fs.readdirSync('node_modules')
 });
 
 nodeModules["sequelize"] = "commonjs sequelize";
+nodeModules["redis"] = "commonjs redis";
 
 
 module.exports = {
