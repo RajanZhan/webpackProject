@@ -1,0 +1,1 @@
+@echo off && echo "init..." && npm run init && echo "init finished..." && pause

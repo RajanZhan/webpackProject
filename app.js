@@ -5,9 +5,6 @@ const path = require("path");
 global.$config = JSON.parse(fs.readFileSync("./config.json").toString());
 var  db = require("./lib/db")();
 var redis = require("./lib/redis")();
-var arguments = process.argv.splice(2);
-const DEBUG = true; // 是否调试模式
-
 app.use(express.static('static'));
 app.use(express.static('dist'));
 //读取启动的配置文件
@@ -27,9 +24,7 @@ if($config.debug == 1){
     });
     app.use(webpackDevMid);
     app.use(webpackHotMid);
-    console.log("webpac init ...");
 }
-console.log($config);
 app.set('views', path.join(__dirname, 'dist'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
@@ -39,4 +34,3 @@ app.use('/',require("./controller/Home.js").middle,require("./controller/Home.js
 
 app.listen($config.port);
 console.log(`app is running and listen port ${$config.port}`);
-global.DEBUG = DEBUG;

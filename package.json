@@ -1,27 +1,77 @@
 {
-  "name": "webpack",
+  "name": "src",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
-  "dependencies": {
-    "node-watch": "^0.5.8",
-    "supervisor": "^0.12.0",
-    "webpack": "^4.5.0"
-  },
-  "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "json-loader": "^0.5.7",
-    "webpack-cli": "^2.0.14"
+  "main": "app.js",
+  "directories": {
+    "lib": "lib"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "dev": "webpack --watch "
+    "dev": "nodemon app.js",
+    "init": "npm install --production"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "mysql": "^2.15.0",
+    "mysql2": "^1.5.3",
+    "redis": "^2.8.0",
+    "sequelize": "^4.37.6"
+  },
+  "nodemonConfig": {
+    "ignore": [
+      "node_modules/*",
+      ".git/*",
+      ".svn/*",
+      ".idea/*",
+      "dist/*",
+      "browserSrc/*"
+    ],
+    "watch": [
+      "lib/*",
+      "dataModel/*",
+      "controller/*",
+      "model/*",
+      "app.js",
+      "config.json",
+      "common/*"
+    ]
+  },
+  "devDependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.24.1",
+    "babel-loader": "^7.0.0",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-runtime": "^5.8.38",
+    "css-loader": "^0.28.4",
+    "file-loader": "^1.1.11",
+    "html-webpack-plugin": "^2.28.0",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.4",
+    "nodemon": "^1.17.3",
+    "pm2": "^2.10.2",
+    "style-loader": "^0.18.1",
+    "tapable": "^1.0.0",
+    "vue": "^2.5.9",
+    "vue-hot-reload-api": "^2.1.0",
+    "vue-html": "^0.3.0",
+    "vue-html-loader": "^1.2.4",
+    "vue-loader": "^12.2.1",
+    "vue-router": "^2.5.3",
+    "vue-style-loader": "^3.0.1",
+    "vue-template-compiler": "^2.5.9",
+    "vuex": "^3.0.1",
+    "webpack": "^2.6.1",
+    "webpack-cli": "^2.0.14",
+    "webpack-dev-middleware": "^2.0.4",
+    "webpack-dev-server": "^2.4.5",
+    "webpack-hot-middleware": "^2.18.0",
+    "webpack-sources": "^1.1.0"
+  }
 }

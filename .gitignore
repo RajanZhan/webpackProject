@@ -1,4 +1,5 @@
 /build
+/dist/*.js
 /node_modules
-/src/node_modules
+/compileTool/node_modules
 /.idea
