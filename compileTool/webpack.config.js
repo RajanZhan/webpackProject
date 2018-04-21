@@ -1,6 +1,7 @@
 var webpcak = require('webpack');
 const fs = require("fs");
 const path = require("path");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 var nodeModules = {};
 fs.readdirSync('node_modules')
@@ -37,4 +38,7 @@ module.exports = {
 		__filename: false,
 		__dirname: false
 	},
+	plugins:[
+		new UglifyJSPlugin()
+	]
 }

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 const fs = require("fs");
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const HotScript = 'webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000';
 const config = JSON.parse(fs.readFileSync("./config.json").toString());
 function resolve(dir) {
@@ -93,6 +94,7 @@ module.exports = {
                 NODE_ENV: '"development"'
             }
         }),
-        new webpack.HotModuleReplacementPlugin()
+        new webpack.HotModuleReplacementPlugin(),
+		new UglifyJSPlugin()
     ]
 };
