@@ -8,13 +8,9 @@ function middle(req,res,next){
 }
 
 router.get("/",async (req,res)=>{
-
-    //let result = await db.models.pet.findAll();
-    //let result = await cache.get("name");
-	//console.log("hhah");
-	//res.render("index.html");
-	console.log("this is index ");
-	res.send("hahaha1");
+	
+	console.log($common.getDate());
+	res.render("home.index.html",{name:"rajan"});
 })
 
 router.get("/test",async (req,res)=>{

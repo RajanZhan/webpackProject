@@ -84,9 +84,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            filename: 'index.html',
+            filename: 'admin.html',
             inject: false,
-            template: path.resolve(__dirname, './dist/index.html'),
+            template: path.resolve(__dirname, './dist/admin.html'),
             hash: false
         }),
         new webpack.DefinePlugin({

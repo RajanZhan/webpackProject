@@ -15,6 +15,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "art-template": "^3.0.3",
     "ejs": "^2.5.9",
     "express": "^4.16.3",
     "mysql": "^2.15.0",
